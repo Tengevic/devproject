@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">{{patient.name}}</h1>
+    <div class="col-md-6">
+      <p>Date of birth: {{patient.dob}}</p>
+      <p>Gender: {{patient.gender}}</p>
+    </div>
+    <div class="col-md-6">
+      <p>Phone Number : {{patient.phone_number}}</p>
+      <p>Date Created : {{patient.date_created}}</p>
+    </div>
+  </div>
+  <hr>
+  <table class="table" >
+    <thead>
+      <tr>	<th>#</th><th>LocationID</th>	<th>Date</th><th>HIV status</th> <th>Viral load</th> <th>Date created</th>	</tr>
+    </thead>
+    <tbody>
+
+      <tr
+        *ngFor="let encounter of encounters"
+      >
+      <th scope="row">{{encounter.encounterId}}<td>{{encounter.location_id}}</td><td>{{encounter.encounter_datetime}}</td><td>{{encounter.hiv_status}}</td><td>{{encounter.vl}}</td><td>{{encounter.date_created}}</td></tr>
+
+    </tbody>
+  </table>
+</div>
